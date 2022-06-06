@@ -63,7 +63,32 @@ public class Sketch extends PApplet {
 
     text(message, 25, 150);
 
+    if(keyPressed){
+      image(imgPurpleHeart, mouseX, mouseY);
+    }
+
+    if (keyPressed) {
+      if (keyCode == UP) {
+        sunY--;
+      }
+      else if (keyCode == DOWN) {
+        sunY++;
+      }
+      else if (keyCode == LEFT){
+        sunX--;
+      }
+      else if (keyCode == RIGHT){
+       sunX++; 
+      }
+    }
     
+    // Sun
+    ellipse(sunX, sunY, 100, 100);
+
+  }
+
+  public void keyTyped() {
+    message += key;
   }
   
   public void mouseClicked() {
